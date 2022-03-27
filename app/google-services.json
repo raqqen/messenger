@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "153326760509",
+    "project_id": "discuss-d7c57",
+    "storage_bucket": "discuss-d7c57.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:153326760509:android:43e712667190b7c6fbf054",
+        "android_client_info": {
+          "package_name": "com.holam.discuss"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "153326760509-i3ihbqnum9in9tefesd30iu7cvmao556.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.holam.discuss",
+            "certificate_hash": "d7c52efbbbca157f601213af8aa4d3e3189e9a5d"
+          }
+        },
+        {
+          "client_id": "153326760509-gtkb7dm95kf2o9dbbct29ivqdmbmknj3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwrh2ucAHY6VmQMf10e0SO9R-HlRHX-vM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "153326760509-gtkb7dm95kf2o9dbbct29ivqdmbmknj3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
