@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Discuss</string>
+    <string name="wpisz_tutaj">Wpisz tutaj</string>
+    <string name="hint">wpisz tutaj</string>
 </resources>
