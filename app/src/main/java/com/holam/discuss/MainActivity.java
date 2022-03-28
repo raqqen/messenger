@@ -2,7 +2,6 @@ package com.holam.discuss;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
 import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.EditText;
@@ -16,8 +15,11 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.database.FirebaseListAdapter;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,12 +33,11 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == SIGN_IN)
         {
-            if (resultCode == RESULT_OK)
-            {
+            if (resultCode == RESULT_OK) {
+
                 Snackbar.make(activity_main, "You are already authed", Snackbar.LENGTH_SHORT).show();
                 displayAllMessages();
-            }
-            else {
+            } else {
                 Snackbar.make(activity_main, "You are not already authed", Snackbar.LENGTH_SHORT).show();
                 finish();
             }
@@ -54,10 +55,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
                     public void onClick(View v){
                 EditText textField = findViewById(R.id.InputLayout);
-                if (textField.getText().toString() == "")
+                if (textField.getText().toString().equals(""))
                     return;
                 FirebaseDatabase.getInstance().getReference().push().setValue(
-                        new Message(FirebaseAuth.getInstance().getCurrentUser().getEmail(),
+                        new Message(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getEmail(),
                                 textField.getText().toString())
                 );
                 textField.setText("");
@@ -65,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
         });
         if (FirebaseAuth.getInstance().getCurrentUser() == null)
+            
             startActivityForResult(AuthUI.getInstance().createSignInIntentBuilder().build(), SIGN_IN);
         else
             Snackbar.make(activity_main, "You are already authed", Snackbar.LENGTH_SHORT).show();
